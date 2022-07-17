@@ -1,6 +1,12 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-  "include": ["src", "types", "stitches.config.ts"],
+  "include": [
+    "src",
+    "types",
+    "stitches.config.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "compilerOptions": {
     "baseUrl": "src",
     "module": "esnext",

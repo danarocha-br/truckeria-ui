@@ -232,3 +232,70 @@ export const lightTheme = createTheme('light-theme', {
     ...light,
   },
 });
+
+export const globalStyles = globalCss({
+  '*, *::before, *::after': {
+    boxSizing: 'border-box',
+    '-webkit-font-smoothing': 'antialiased',
+    '-moz-osx-font-smoothing': 'grayscale',
+  },
+
+  html: {
+    scrollBehavior: 'smooth',
+  },
+
+  body: {
+    margin: 0,
+    color: '$text-default',
+    backgroundColor: '$surface-base-default',
+  },
+
+  button: {
+    cursor: 'pointer',
+    border: 'none',
+    outline: 'none',
+  },
+
+  'body, button': {
+    color: '$forest',
+    fontFamily: '$sans',
+    fontSize: '$base',
+  },
+
+  '[disabled]': {
+    cursor: 'not-allowed',
+  },
+
+  'html, body, #root, #__next, #__next > div': {
+    height: '100%',
+    zIndex: 0,
+
+    '@bp-md': {
+      height: 'auto',
+    },
+  },
+
+  '#__next': {
+    position: 'relative',
+    zIndex: 0,
+  },
+
+  'button, input, textarea': {
+    fontFamily: '$sans',
+    fontDisplay: 'swap',
+  },
+
+  svg: { display: 'block' },
+
+  'pre, code': { margin: 0, fontFamily: '$mono' },
+
+  '::selection': {
+    backgroundColor: '$900',
+  },
+
+  'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus': {
+    boxShadow: '0 0 0px 4px hsla(21, 100%, 91%, 1) inset !important',
+    transition: 'background-color 5000s ease-in-out 0s',
+    filter: 'none',
+  },
+});

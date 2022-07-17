@@ -1,6 +1,6 @@
 import { styled } from '../../stitches.config';
 
-export type FlexProps = typeof Flex;
+export type FlexProps = React.ComponentProps<typeof Flex>
 
 export const Flex = styled('div', {
   boxSizing: 'border-box',
@@ -65,6 +65,9 @@ export const Flex = styled('div', {
       },
     },
     gap: {
+      0: {
+        gap: 0,
+      },
       1: {
         gap: '$1',
       },
@@ -96,13 +99,18 @@ export const Flex = styled('div', {
         gap: '$16',
       },
     },
+    fullWidth: {
+      true: {
+        w: '$full',
+      },
+    },
   },
   defaultVariants: {
     direction: 'row',
     align: 'start',
     justify: 'start',
     wrap: 'noWrap',
-    gap: '3',
+    gap: 3,
+    fullWidth: true,
   },
 });
-
